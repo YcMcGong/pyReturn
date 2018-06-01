@@ -37,7 +37,7 @@ A python package to provide auto-formatted json response for web services. It fo
       sr.set_errorMessage('user defined message')
       
    #### Attach data to the response
-      sr.attach_data(attribute_name, attribure_value, isSuccess = False)
+      sr.attach_data(key, value, isSuccess = False)
       [set isSuccess = True is this data attachment means a successful request]
       
    #### Generate a JSON response
