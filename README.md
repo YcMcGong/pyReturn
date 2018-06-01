@@ -7,9 +7,7 @@ A python package to provide auto-formatted json response for web services. It fo
   
     [status]: A boolean indicating if the requested-action is successful
     [errorMessage]: A message to provide some information about the status
-    [*data]: User use the attach_data method to insert an object to the *data tag
-    (*data is an user-defined name)
-
+    [*other keys]: Additional key to store the data returned from the microservices
 
 ### Installation
     pip install pyReturn
@@ -18,13 +16,12 @@ A python package to provide auto-formatted json response for web services. It fo
 
    Currently only has the status_response class.
    
-    A status response class include an attribute data
-    status_response.data has the following tags:
+    A status_response class include an attribute data
+    status_response.data has the following keys:
 
     [status]: A boolean indicating if the requested-action is successful
     [errorMessage]: A message to provide some information about the status
-    [*data]: User use the attach_data method to insert an object to the *data tag
-    (*data is an user-defined name)
+    [*data]: User use the attach_data method to insert an object to the *data key
    
    #### Import
    
@@ -32,6 +29,8 @@ A python package to provide auto-formatted json response for web services. It fo
      sr = status_response()
      
    #### Set Status
+   status is set to False by default. 
+   
       sr.set_status(True or False)
       
    #### Set errorMessage
@@ -41,6 +40,8 @@ A python package to provide auto-formatted json response for web services. It fo
       sr.attach_data(attribute_name, attribure_value, isSuccess = False)
       [set isSuccess = True is this data attachment means a successful request]
       
-   #### Generate a JSON version response
-      sr.get_response()
+   #### Generate a JSON response
+      ...
+      response_json = sr.get_response()
+      return response_json
    
