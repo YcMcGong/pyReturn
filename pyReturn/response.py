@@ -25,6 +25,9 @@ class status_response():
         self.data['status'] = isSuccess
 
     def set_errorMessage(self, message):
+        self.data['errorMessage'] = [message]
+      
+    def add_errorMessage(self, message):
         self.data['errorMessage'].push(message)
 
     def attach_data(self, name, data, isSuccess = False):
